@@ -1,27 +1,20 @@
-<div id="<%= dom_id flat %>">
-  <p>
-    <strong>Name:</strong>
-    <%= flat.name %>
-  </p>
+<div class="card" id="<%= dom_id flat %>">
+    <h2 class="card-title text-center">
+      <%= link_to flat.name, flat_path(flat), class:"text-center text-black" %>
+    </h2>
+  <div class="card-body d-flex flex-column py-3 justify-content-between">
 
-  <p>
-    <strong>Address:</strong>
-    <%= flat.address %>
-  </p>
+    <div class="lead">
+      <p class="card-text fs-5"><%= flat.address %></p>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= flat.description %>
-  </p>
-
-  <p>
-    <strong>Price per night:</strong>
-    <%= flat.price_per_night %>
-  </p>
-
-  <p>
-    <strong>Number of guests:</strong>
-    <%= flat.number_of_guests %>
-  </p>
-
+    <div class="d-flex justify-content-around">
+      <div>
+        <i class="fa-regular fa-dollar-sign"></i><%= flat.price_per_night %>
+      </div>
+      <div>
+        <i class="fa-solid fa-people-roof"></i> <%= flat.number_of_guests %>
+      </div>
+    </div>
+</div>
 </div>
